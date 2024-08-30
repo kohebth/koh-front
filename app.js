@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
-const rest = require('src/rest.js')
+const rest = require('./src/rest.js')
 
 const app = express();
 const PORT = process.env.PORT || 3000;

@@ -1,12 +1,11 @@
-FROM openjdk:11-jdk-slim-buster
+FROM node:20.17.0-slim
 
-ENV APP=gateway
+COPY ./package.json /app/
 
-COPY build/distributions/${APP}-1.0-SNAPSHOT.tar /opt/dist.tar
-WORKDIR /
-RUN tar -xf /opt/dist.tar
-RUN mv ${APP}-1.0-SNAPSHOT/bin/* /bin
-RUN mv ${APP}-1.0-SNAPSHOT/lib/* /lib
-RUN rm /opt/dist.tar
+WORKDIR /app
 
-ENTRYPOINT [ "gateway", "koh.service.gateway.App" ]
+RUN npm install .
+
+COPY . .
+
+ENTRYPOINT [ "npm", "start" ]

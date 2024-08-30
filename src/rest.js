@@ -1,9 +1,9 @@
 const http = require('http');
 const axios = require("axios");
 
-const gw = 'https://gw.vps-network'
+const gw = 'https://gw.sv-network'
 
-export function registerUser(email, password) {
+function registerUser(email, password) {
     try {
         return axios.post(gw + '/register', {'email': email, 'password': password});
     } catch (e) {

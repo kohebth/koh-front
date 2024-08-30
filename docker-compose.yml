@@ -1,27 +1,21 @@
 version: "3.18"
 
 services:
-  gateway:
-    env_file: .env
+  front:
     build:
       dockerfile: docker/Dockerfile
       context: .
-    image: koh/front-page
-    container_name: front-page
+    image: koh/frontpage
+    container_name: frontpage
     ports:
-      - "3000:3000"
-    expose:
-      - 3000
+      - "80:3000"
     networks:
-      - default
+      - sv-network
     deploy:
       resources:
         limits:
           cpus: 0.5
           memory: 256M
 networks:
-  vps-network:
-    external: true
-  default:
-    name: vps-network
+  sv-network:
     external: true
