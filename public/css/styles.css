@@ -19,3 +19,22 @@ h2 {
 .btn-primary {
   width: 100%;
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-table {
+  /*margin: 25px;*/
+  width: 100%;
+}
+
+.center {
+  display: grid;
+  margin: 100px auto;
+  width: 50%;
+  line-height: 29px;
+  justify-content: center;
+}

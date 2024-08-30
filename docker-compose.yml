@@ -1,0 +1,27 @@
+version: "3.18"
+
+services:
+  gateway:
+    env_file: .env
+    build:
+      dockerfile: docker/Dockerfile
+      context: .
+    image: koh/front-page
+    container_name: front-page
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    networks:
+      - default
+    deploy:
+      resources:
+        limits:
+          cpus: 0.5
+          memory: 256M
+networks:
+  vps-network:
+    external: true
+  default:
+    name: vps-network
+    external: true
