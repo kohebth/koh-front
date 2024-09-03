@@ -1,0 +1,37 @@
+<h2>Register</h2>
+<form action="/register" method="post">
+    <p class="<%= error === true ? 'text-danger': 'text-success' %>"> <%= message %> </p>
+    <table class="entry-table">
+        <tr>
+            <td class="entry-label-cell">
+                <label for="reg-email">Email</label>
+            </td>
+            <td class="entry-input-cell">
+                <input class="form-control" type="email" id="reg-email" name="email" placeholder="@sis.hust.edu.vn"
+                       required>
+            </td>
+        </tr>
+        <tr>
+            <td class="entry-label-cell">
+                <label for="reg-password">Password</label>
+            </td>
+            <td class="entry-input-cell">
+                <input class="form-control" type="password" id="reg-password" name="password"
+                       placeholder="************" required>
+            </td>
+        </tr>
+        <tr>
+            <td class="entry-label-cell">
+                <label for="reg-confirm-password">Confirm Password</label>
+            </td>
+            <td class="entry-input-cell">
+                <input class="form-control" type="password" name="confirmPassword" id="reg-confirm-password"
+                       placeholder="************" required>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div class="button-container">
+        <button class="btn btn-success" type="submit">register</button>
+    </div>
+</form>

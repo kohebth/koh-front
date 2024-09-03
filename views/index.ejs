@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header.ejs') %>
+    <title>App</title>
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/entry.ejs">
+</head>
+<body>
+<div class="d-flex">
+    <!-- Include the sidebar -->
+    <%- include('partials/sidebar') %>
+
+    <!-- Main Content -->
+    <div class="container-fluid p-4">
+        <header class="mb-4">
+            <h1 class="h3">Company Feed</h1>
+        </header>
+
+        <!-- Feed Container -->
+        <div class="feed-container">
+            <%- typeof newvps !== 'undefined'  ? include('partials/form/newvps.ejs'):'' %>
+            <% feed.forEach(day => { %>
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><%= day.date %></h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <% day.activities.forEach(activity => { %>
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <span class="badge badge-info"><%= activity.type %></span>
+                                        <strong><%= activity.time %></strong> - <%= activity.description %>
+                                    </div>
+                                    <% if (activity.company) { %>
+                                        <span class="text-muted"><%= activity.company %></span>
+                                    <% } %>
+                                </div>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

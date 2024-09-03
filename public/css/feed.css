@@ -1,0 +1,19 @@
+
+.feed-container {
+margin-top: 20px;
+}
+
+.feed-day {
+margin-bottom: 30px;
+}
+
+.feed-item {
+border: 1px solid #ddd;
+padding: 10px;
+margin: 10px 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}

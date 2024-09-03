@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header.ejs') %>
+    <link rel="stylesheet" href="/css/entry.css">
+    <title>Login</title>
+</head>
+<body>
+<div class="entry-card">
+    <div id="login-form">
+        <%- action === 'login' ? include('partials/form/login.ejs') : include('partials/form/register.ejs') %>
+    </div>
+</div>
+</body>
+</html>

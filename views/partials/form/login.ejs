@@ -1,0 +1,36 @@
+<h2>Login</h2>
+<!-- Login Form -->
+<form action="/login" method="POST">
+    <p class="<%= error === true ? 'text-danger' : 'text-success' %>"> <%= message %> </p>
+    <table class="login-table">
+        <tr>
+            <td class="entry-label-cell">
+                <label for="email">Email</label>
+            </td>
+            <td class="entry-input-cell">
+                <input class="form-control" type="email" id="email" name="email" placeholder="@sis.hust.edu.vn"
+                       required>
+            </td>
+        </tr>
+        <tr>
+            <td class="entry-label-cell">
+                <label for="password">Password</label>
+            </td>
+            <td class="entry-input-cell">
+                <input class="form-control" type="password" id="password" name="password"
+                       placeholder="************" required>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div class="button-container">
+        <button class="btn btn-success" type="submit">login</button>
+    </div>
+</form>
+<br>
+<form action="/" method="GET">
+    <div class="button-container">
+        <input type="hidden" name="action" value="register">
+        <button class="btn btn-secondary" type="submit">register</button>
+    </div>
+</form>

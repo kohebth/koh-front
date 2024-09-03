@@ -1,2 +1,1 @@
-// Custom JavaScript can be added here if needed
-console.log('Script loaded');
+import 'bootstrap.min.js';

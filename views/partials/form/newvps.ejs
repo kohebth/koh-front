@@ -1,0 +1,40 @@
+<h2>New VPS</h2>
+<!-- Login Form -->
+<form action="/newpvs" method="POST">
+    <table class="login-table">
+        <% form.input.forEach(it => { %>
+            <tr>
+                <td class="entry-label-cell">
+                    <label for="<%= it.id %>">
+                        <%= it.label %>
+                    </label>
+                </td>
+                <td class="entry-input-cell">
+                    <input class="form-control" type="text" id="<%= it.id %>" name="<%= it.name %>" required>
+                </td>
+            </tr>
+        <% }); %>
+        <% form.options.forEach(opt => { %>
+            <tr>
+                <td class="entry-label-cell">
+                    <label for="<%= opt.id %>">
+                        <%= opt.label %>
+                    </label>
+                </td>
+                <td class="entry-input-cell">
+                    <select class="form-select" type="input" name="<%= opt.name %>"
+                            aria-label="Choose">
+                        <% opt.items.forEach(it => { %>
+                        <option value="<%= it.value %>"><%= it.label %></option>
+                        <% }); %>
+                    </select>
+                </td>
+            </tr>
+        <% }); %>
+
+    </table>
+    <br>
+    <!--    <div class="button-container">-->
+    <button class="btn btn-primary" type="submit">submit</button>
+    <!--    </div>-->
+</form>

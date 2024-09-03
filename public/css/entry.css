@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7f9;
+}
+.entry-card {
+    width: auto;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+.entry-card .form-control {
+    border-radius: 30px;
+}
+.entry-card .btn {
+    border-radius: 30px;
+}
+.entry-card .logo {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.entry-label-cell {
+    text-align: right;
+}
+
+.entry-input-cell {
+    width: 100%;
+    padding-left: 25px;
+}
+
+.entry-table {
+    /*margin: 25px;*/
+    width: 100%;
+}
+
+#registration-form {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
